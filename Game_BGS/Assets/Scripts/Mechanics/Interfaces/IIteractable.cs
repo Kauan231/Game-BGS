@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Utilities {
-    public interface IIteract
+namespace Mechanics {
+    public interface IIteractable
     {
         public void Interact();
         public void ShowInUI();

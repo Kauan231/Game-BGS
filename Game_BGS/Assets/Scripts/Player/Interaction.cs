@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Utilities;
+using Mechanics;
 
 namespace Player {
     public class Interaction : MonoBehaviour
@@ -9,21 +9,26 @@ namespace Player {
         void OnTriggerEnter2D(Collider2D col) {
             GameObject objCollided = col.gameObject;
             if(objCollided.tag == "Interactable") {
-                objCollided.GetComponent<IIteract>().ShowInUI();
+                objCollided.GetComponent<IIteractable>().ShowInUI();
             }
         }
         
         void OnTriggerStay2D(Collider2D col) {
             GameObject objCollided = col.gameObject;
             if((objCollided.tag == "Interactable") && Input.GetKey(KeyCode.E)) {
-                objCollided.GetComponent<IIteract>().Interact();
+                objCollided.GetComponent<IIteractable>().Interact();
+            }
+            if((objCollided.tag == "Collectable")) {
+                gameObject.GetComponent<ICollector>().Collect(objCollided.GetComponent<PhysicalItem>().itemData);
+                col.GetComponent<ICollectable>().Collect();
+                GameObject.FindWithTag("SoundManager").GetComponent<SoundManager>().ActivateSfx("Collect");
             }
         }
         
         void OnTriggerExit2D(Collider2D col) {
            GameObject objCollided = col.gameObject;
             if(objCollided.tag == "Interactable") {
-                objCollided.GetComponent<IIteract>().HideInUI();
+                objCollided.GetComponent<IIteractable>().HideInUI();
             } 
         }
     }

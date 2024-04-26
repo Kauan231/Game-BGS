@@ -9,13 +9,19 @@ namespace Player {
         [SerializeField]
         private float speed = 3f;
 
+        [SerializeField] private bool getSavedPosition;
+
         private Rigidbody2D rb;
         private Vector2 movementDirection;
         
         private void Awake() {
             rb = GetComponent<Rigidbody2D>();
+            if(getSavedPosition) {
+                Vector3 SpawnpointFound = GameObject.Find(PlayerPrefs.GetString("Spawnpoint", "DefaultSpawn")).transform.position;
+                transform.position = new Vector3(SpawnpointFound.x, SpawnpointFound.y, transform.position.z);
+            }
         }
-
+        
         void Update()
         {
             float horizontal = Input.GetAxisRaw("Horizontal");

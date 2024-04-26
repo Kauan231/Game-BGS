@@ -9,22 +9,17 @@ public class SpawnManager : MonoBehaviour
     public static Vector2 ExitPoint;
     public static string PreviousScene;
 
-    public Vector2 exit;
-
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
+            PreviousScene = SceneManager.GetActiveScene().name;
             DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
-        PreviousScene = SceneManager.GetActiveScene().name;
-    }
-    public void Update() {
-        exit = ExitPoint;
     }
 }

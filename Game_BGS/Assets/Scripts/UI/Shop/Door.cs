@@ -25,7 +25,7 @@ namespace UI {
                 SpawnManager.ExitPoint = Entrance.transform.position;
             }
             SpawnManager.PreviousScene =  SceneManager.GetActiveScene().name;
-            SceneManager.LoadSceneAsync(SceneToAccess);
+            SceneManager.LoadScene(SceneToAccess);
         }
     }
 }

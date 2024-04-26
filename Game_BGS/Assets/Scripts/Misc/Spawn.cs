@@ -6,13 +6,15 @@ using UnityEngine.SceneManagement;
 public class Spawn : MonoBehaviour
 {
     private GameObject player;
-    void Awake(){
+    void OnEnable(){
         player = GameObject.FindWithTag("Player");
-        if(SceneManager.GetActiveScene().name == "Main" && SpawnManager.PreviousScene != SceneManager.GetActiveScene().name) {
-            player.transform.position = SpawnManager.ExitPoint;
+        if(SpawnManager.PreviousScene != SceneManager.GetActiveScene().name) {
+            if(SceneManager.GetActiveScene().name == "Main") {
+                player.transform.position = SpawnManager.ExitPoint;
+            }
+            else {
+                player.transform.position = transform.position;
+            }
         }
-        else {
-            player.transform.position = transform.position;
-        }
-    }
+    }    
 }

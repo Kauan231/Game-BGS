@@ -11,8 +11,8 @@ namespace UI {
     {
         [SerializeField] private TextMeshProUGUI PressToInteract;
         [SerializeField] private string SceneToAccess;
-        [SerializeField] private bool SavePosition;
-        [SerializeField] private GameObject Spawnpoint;
+        [SerializeField] private bool isEntrance;
+        [SerializeField] private GameObject Entrance;
         
         public void ShowInUI() {
             PressToInteract.gameObject.SetActive(true);
@@ -21,15 +21,11 @@ namespace UI {
             PressToInteract.gameObject.SetActive(false);
         }
         public void Interact() {
-            if(SavePosition) {
-                PlayerPrefs.SetString("Spawnpoint", Spawnpoint.name);
+            if(isEntrance) {
+                SpawnManager.ExitPoint = Entrance.transform.position;
             }
+            SpawnManager.PreviousScene =  SceneManager.GetActiveScene().name;
             SceneManager.LoadSceneAsync(SceneToAccess);
         }
-
-        public void Update() {
-            Debug.Log(PlayerPrefs.GetFloat("X"));
-        }
-    
     }
 }

@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &134724119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 134724120}
+  m_Layer: 0
+  m_Name: Spawnpoint
+  m_TagString: Entrance
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &134724120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134724119}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.07, y: -3.56, z: 0.08207731}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &151735095
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +286,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 773699313}
   speed: 4.5
-  getSavedPosition: 0
 --- !u!1 &773699309
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,6 +305,7 @@ GameObject:
   - component: {fileID: 773699317}
   - component: {fileID: 773699318}
   - component: {fileID: 773699319}
+  - component: {fileID: 773699321}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -316,7 +347,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  getSavedPosition: 0
 --- !u!212 &773699312
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -588,6 +618,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 454261e88540d144a8bb6c900d0d4935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &773699321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773699309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0201d472b6a3bb478e3df3d11da172b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &812408035
@@ -885,8 +927,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PressToInteract: {fileID: 871518901}
   SceneToAccess: Main
-  SavePosition: 0
-  Spawnpoint: {fileID: 0}
+  isEntrance: 0
+  Entrance: {fileID: 0}
 --- !u!50 &931511890
 Rigidbody2D:
   serializedVersion: 4

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class SpawnManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        PreviousScene = SceneManager.GetActiveScene().name;
     }
     public void Update() {
         exit = ExitPoint;

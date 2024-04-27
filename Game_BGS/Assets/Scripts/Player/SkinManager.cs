@@ -5,6 +5,7 @@ using UnityEngine;
 public class SkinManager : MonoBehaviour
 {
     private Animator originalAnimator;
+    [SerializeField] private RuntimeAnimatorController Base;
 
     [System.Serializable] 
     public class Skins {
@@ -14,22 +15,19 @@ public class SkinManager : MonoBehaviour
 
     [SerializeField] private List<Skins> skins = new List<Skins>();
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        originalAnimator = GetComponent<Animator>();     
+        originalAnimator = GetComponent<Animator>();  
     }
 
-    void ChangeSkin(string _skinName) {
-        AnimatorOverrideController _over = skins.Find(x => x.skinName == _skinName).animOverride;
-        originalAnimator.runtimeAnimatorController = _over;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.K)) {
-            ChangeSkin("Blue");
-        }   
+    public void ChangeSkin(string _skinName) {
+        if(_skinName == "Base") {
+            originalAnimator.runtimeAnimatorController = Base;
+        }
+        else {
+            AnimatorOverrideController _over = skins.Find(x => x.skinName == _skinName).animOverride;
+            originalAnimator.runtimeAnimatorController = _over;
+        }
+        
     }
 }

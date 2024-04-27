@@ -10,6 +10,7 @@ TagManager:
   - SoundManager
   - WalletManager
   - InventoryItem
+  - SkinManager
   layers:
   - Default
   - TransparentFX

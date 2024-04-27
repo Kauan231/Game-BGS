@@ -8,6 +8,7 @@ namespace Mechanics {
     {
         public Item item;
         public int amount;
+        public bool Equipped;
 
         public InventoryItem(Item _item, int _amount) {
             item = _item;

@@ -6,7 +6,8 @@ namespace Player {
     [RequireComponent(typeof(AudioSource))]
     public class PlayerSound : MonoBehaviour
     {
-        private AudioSource audio;
+        [HideInInspector]
+        public AudioSource audio;
         [SerializeField] private AudioClip Walk;
         bool isWalking = false;
 

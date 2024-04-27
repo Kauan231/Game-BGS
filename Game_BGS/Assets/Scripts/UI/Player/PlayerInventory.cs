@@ -130,6 +130,7 @@ public class PlayerInventory : MonoBehaviour
 
     private void OnEnable(){
         Time.timeScale = 0f;
+        GameObject.FindWithTag("Player").GetComponent<PlayerSound>().audio.Pause();
         UpdateUI();
         ChangeType(itemType.Gem);
         ShowMenu.SetActive(false);
@@ -139,6 +140,7 @@ public class PlayerInventory : MonoBehaviour
     }
     private void OnDisable() {
         Time.timeScale = 1f;
+        GameObject.FindWithTag("Player").GetComponent<PlayerSound>().audio.Play();
     }
 }
 

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System.Linq;
 using TMPro;
 using Mechanics;
+using Player;
 
 public class StoreManager : MonoBehaviour
 {
@@ -37,15 +38,9 @@ public class StoreManager : MonoBehaviour
         if(AmountToBuy > ItemToBuy.amount) {
             AmountToBuy = ItemToBuy.amount;
         }
-        if(AmountToBuy < 0) {
-            AmountToBuy = 0;
-        }
     }
     private void Sub() {
         AmountToBuy--;
-        if(AmountToBuy > ItemToBuy.amount) {
-            AmountToBuy = ItemToBuy.amount;
-        }
         if(AmountToBuy < 0) {
             AmountToBuy = 0;
         }
@@ -86,23 +81,31 @@ public class StoreManager : MonoBehaviour
                 if(newAmount <= 0) {
                     items.Remove(ItemToBuy);
                     Destroy(selectedItemInUi);
+
                     selectedItemInUi = null;
+                    ItemToBuy = null;
+                    AmountToBuy = 0;
+                    AmountText.text = "";
+                    TotalToPay = 0f;
+                    Total.text = "";
+                    ShowMenu.SetActive(false);
+                    return;
                 }
                 else {
                     items.Single(x => x == ItemToBuy).amount = newAmount;
                     selectedItemInUi.gameObject.GetComponent<ItemDisplayInGrid>().AmountText.text = newAmount.ToString();
+                    ItemToBuy.amount = newAmount;
+                    AmountToBuy = 0;
+                    AmountText.text = "";
+                    TotalToPay = 0f;
+                    Total.text = "";
                 }
                 
-                ItemToBuy.amount = newAmount;
-                AmountToBuy = 0;
-                AmountText.text = AmountToBuy.ToString();
-                TotalToPay = 0f;
-                Total.text = TotalToPay.ToString();
+                
             }
         }
         if(isSell) {
-            if(AmountToBuy > ItemToBuy.amount) return;
-            GameObject.FindWithTag("Player").GetComponent<InventoryManager>().SubtractAmount(new InventoryItem(ItemToBuy.item, AmountToBuy));
+            if(AmountToBuy > ItemToBuy.amount || AmountToBuy == 0) return;
             GameObject.FindWithTag("SoundManager").GetComponent<SoundManager>().ActivateSfx("Buy");
             GameObject.FindWithTag("WalletManager").GetComponent<WalletManager>().currentMoney += TotalToPay;
             int newAmount =  ItemToBuy.amount - AmountToBuy;
@@ -112,7 +115,7 @@ public class StoreManager : MonoBehaviour
             else {
                 selectedItemInUi.gameObject.GetComponent<ItemDisplayInGrid>().AmountText.text = newAmount.ToString();
             }
-            
+
             ItemToBuy.amount = newAmount;
             AmountToBuy = 0;
             AmountText.text = AmountToBuy.ToString();
@@ -179,6 +182,7 @@ public class StoreManager : MonoBehaviour
 
     private void OnEnable(){
         Time.timeScale = 0f;
+        GameObject.FindWithTag("Player").GetComponent<PlayerSound>().audio.Pause();
         UpdateUI();
         ChangeType(itemType.Gem);
         ShowMenu.SetActive(false);
@@ -189,6 +193,7 @@ public class StoreManager : MonoBehaviour
     }
     private void OnDisable() {
         Time.timeScale = 1f;
+        GameObject.FindWithTag("Player").GetComponent<PlayerSound>().audio.Play();
     }
 
     private void Update() {

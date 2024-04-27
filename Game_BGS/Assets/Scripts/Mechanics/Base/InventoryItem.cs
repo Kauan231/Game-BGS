@@ -8,5 +8,10 @@ namespace Mechanics {
     {
         public Item item;
         public int amount;
+
+        public InventoryItem(Item _item, int _amount) {
+            item = _item;
+            amount = _amount;
+        }
     }
 }

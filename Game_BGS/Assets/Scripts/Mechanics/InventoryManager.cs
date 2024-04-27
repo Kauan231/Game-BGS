@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 namespace Mechanics {
     public class InventoryManager : MonoBehaviour, ICollector
@@ -17,10 +18,17 @@ namespace Mechanics {
             items.Find(x => x.item.Title == _itemUpdated.item.Title).amount += _itemUpdated.amount;
         }
         public void SubtractAmount(InventoryItem _itemUpdated) {
-            items.Find(x => x.item.Title == _itemUpdated.item.Title).amount -= _itemUpdated.amount;
-            if(items.Find(x => x.item.Title == _itemUpdated.item.Title).amount < 0) {
-                items.Find(x => x.item.Title == _itemUpdated.item.Title).amount = 0;
+            //items.Find(x => x.item.Title == _itemUpdated.item.Title).amount -= _itemUpdated.amount;
+            InventoryItem found = items.Find(x => x.item.Title == _itemUpdated.item.Title);
+            int newAmount = found.amount - _itemUpdated.amount;
+            if(newAmount <= 0) {
+                //items.Find(x => x.item.Title == _itemUpdated.item.Title).amount = 0;
+                RemoveItem(found);
             }
+            else {
+                items.Single(x => x == found).amount = newAmount;
+            }
+            
         }
 
         public void Collect(InventoryItem _item) {

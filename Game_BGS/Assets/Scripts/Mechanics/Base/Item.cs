@@ -5,7 +5,9 @@ using UnityEngine;
 namespace Mechanics {
     public enum itemType { 
         Food,
-        Clothes
+        Clothes,
+        Gem,
+        Potion
     }
     [CreateAssetMenu]
     public class Item : ScriptableObject

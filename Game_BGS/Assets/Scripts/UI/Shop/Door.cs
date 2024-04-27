@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
-using Utilities;
+using Mechanics;
 
 namespace UI {
-    public class Door : MonoBehaviour, IIteract
+    public class Door : MonoBehaviour, IIteractable
     {
         [SerializeField] private TextMeshProUGUI PressToInteract;
         [SerializeField] private string SceneToAccess;

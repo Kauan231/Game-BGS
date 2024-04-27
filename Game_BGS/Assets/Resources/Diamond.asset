@@ -16,4 +16,5 @@ MonoBehaviour:
   Sprite: {fileID: 21300000, guid: 53742e34c17a2e6429119fb16b2d3048, type: 3}
   Title: Diamond
   Description: Valuable gem
+  type: 2
   Price: 100

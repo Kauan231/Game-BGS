@@ -1,0 +1,1245 @@
+fileFormatVersion: 2
+guid: 4cabbcf75d2c5514e892c5e1b7a4a5d2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: game-ui-catroon_0
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 4825
+        width: 698
+        height: 877
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a3cc221129c94148a4b1ca059fc3be4
+      internalID: 1236616844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_1
+      rect:
+        serializedVersion: 2
+        x: 1646
+        y: 4976
+        width: 707
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5562f4049b5b50549b74be73eb32617b
+      internalID: 1764572163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_2
+      rect:
+        serializedVersion: 2
+        x: 2659
+        y: 4850
+        width: 662
+        height: 826
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f677aa786b56de94d8268e3b7cd98d69
+      internalID: -540420821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_3
+      rect:
+        serializedVersion: 2
+        x: 3632
+        y: 4845
+        width: 785
+        height: 836
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 689050a9f8486b744834b790eed2a48b
+      internalID: 989299163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_4
+      rect:
+        serializedVersion: 2
+        x: 4951
+        y: 5116
+        width: 1151
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 710d1ee0b5e318d408eb26ca7738ae19
+      internalID: -412658553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_5
+      rect:
+        serializedVersion: 2
+        x: 6394
+        y: 4170
+        width: 1246
+        height: 1532
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ee3cff1bc7f3744aa4da5e52a6b7d4
+      internalID: 765147375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_6
+      rect:
+        serializedVersion: 2
+        x: 7923
+        y: 5295
+        width: 390
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56bef25fb46a84e418e913a5b7f14359
+      internalID: 136216060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_7
+      rect:
+        serializedVersion: 2
+        x: 4951
+        y: 4448
+        width: 1151
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b065df4407f3d884d81eaea2b08647ea
+      internalID: -1113351059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_8
+      rect:
+        serializedVersion: 2
+        x: 7923
+        y: 4805
+        width: 390
+        height: 403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7067b6d061fca3a4eb5d93551a626652
+      internalID: -1221949110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_9
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 3894
+        width: 879
+        height: 676
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a12a694797bfa240a73575a6cc08aed
+      internalID: -237746432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_10
+      rect:
+        serializedVersion: 2
+        x: 1562
+        y: 3847
+        width: 874
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a613ebc84fe5744c99788801f73fe57
+      internalID: -916436482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_11
+      rect:
+        serializedVersion: 2
+        x: 2585
+        y: 3827
+        width: 810
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad556356a03f8744492d1bccb4855ed8
+      internalID: -1296720393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_12
+      rect:
+        serializedVersion: 2
+        x: 3565
+        y: 3816
+        width: 919
+        height: 832
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bff68f78cd9aca943a3bce6924924bce
+      internalID: -232395498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_13
+      rect:
+        serializedVersion: 2
+        x: 4951
+        y: 3780
+        width: 1151
+        height: 587
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10594cead57c3ce448c38b552e891b5e
+      internalID: 1581193958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_14
+      rect:
+        serializedVersion: 2
+        x: 7923
+        y: 4311
+        width: 390
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd1197fc32ace8468077a3cc54022b1
+      internalID: -2145578137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_15
+      rect:
+        serializedVersion: 2
+        x: 6534
+        y: 2467
+        width: 966
+        height: 1478
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4e3828346d9d344d81095122c4f8a01
+      internalID: -217631803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_16
+      rect:
+        serializedVersion: 2
+        x: 7923
+        y: 3820
+        width: 390
+        height: 405
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec34de87cf77bb642a323fd91649032d
+      internalID: 2022546497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_17
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 2937
+        width: 1024
+        height: 573
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 913b3bdea702def41a7055fb48826cc0
+      internalID: -1539278610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_18
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 2830
+        width: 575
+        height: 789
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1adf088a4e10c3246a114dc43a0724f9
+      internalID: -775604140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_19
+      rect:
+        serializedVersion: 2
+        x: 2604
+        y: 2874
+        width: 772
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2594bf69c72fb804ea133b0312467017
+      internalID: 1284393489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_20
+      rect:
+        serializedVersion: 2
+        x: 3672
+        y: 2779
+        width: 705
+        height: 890
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da2a7dca826fe234796c6d7a525b6250
+      internalID: -627935593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_21
+      rect:
+        serializedVersion: 2
+        x: 4624
+        y: 1709
+        width: 1806
+        height: 1934
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b64ce633a3faad7428afafbd78ddf6ff
+      internalID: -661107536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_22
+      rect:
+        serializedVersion: 2
+        x: 7829
+        y: 3312
+        width: 426
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab72ca29625f68549a31689e687fc7a1
+      internalID: -835286769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_23
+      rect:
+        serializedVersion: 2
+        x: 8200
+        y: 3312
+        width: 194
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26873ddc72d19a149aab9658704bde96
+      internalID: 537632471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_24
+      rect:
+        serializedVersion: 2
+        x: 7622
+        y: 2928
+        width: 211
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c337c3b700016f429ca163eeb0df020
+      internalID: -127240061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_25
+      rect:
+        serializedVersion: 2
+        x: 7867
+        y: 2774
+        width: 501
+        height: 523
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8376f21f8e6a2d14ca3303caf8bf2476
+      internalID: 1660139683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_26
+      rect:
+        serializedVersion: 2
+        x: 8402
+        y: 2928
+        width: 211
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74e1dd2d0790e1f43ae230d66f85c1b2
+      internalID: -721068758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_27
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 1713
+        width: 536
+        height: 932
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2bb138468d429047a080b3448965144
+      internalID: 1929340618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_28
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 1744
+        width: 571
+        height: 872
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50311f8253df5f24d9edead4abcd5363
+      internalID: 1231464863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_29
+      rect:
+        serializedVersion: 2
+        x: 2454
+        y: 1739
+        width: 1072
+        height: 881
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1ed175ebc19c4248943e0eb6e57016f
+      internalID: 730847238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_30
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 1779
+        width: 767
+        height: 801
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71fe17f4ab5809a43bd8347d61c5c26e
+      internalID: -8466176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_31
+      rect:
+        serializedVersion: 2
+        x: 6429
+        y: 1662
+        width: 1174
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7101ba4b87f026d4ea8f95056446349d
+      internalID: 220084227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_32
+      rect:
+        serializedVersion: 2
+        x: 7883
+        y: 1784
+        width: 468
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d879e93e014aac49a9bb90de7b3f64a
+      internalID: -664461035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_33
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 1043
+        width: 418
+        height: 437
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0464947b09fe188488d5dacccfb09bf0
+      internalID: 307772868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_34
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 1044
+        width: 417
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eff8a2453e077841a91af2bb8942bf1
+      internalID: 397810724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_35
+      rect:
+        serializedVersion: 2
+        x: 1530
+        y: 1044
+        width: 417
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60078f1c523f3d041a57811fa570554b
+      internalID: -1874565716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_36
+      rect:
+        serializedVersion: 2
+        x: 2102
+        y: 1044
+        width: 418
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5acb141f7e5c26840affd10ebff0ac61
+      internalID: 134315757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_37
+      rect:
+        serializedVersion: 2
+        x: 2672
+        y: 1044
+        width: 418
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3754325ce61661646936b2800d4fe509
+      internalID: -1488318201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_38
+      rect:
+        serializedVersion: 2
+        x: 3245
+        y: 1044
+        width: 417
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8c447f16b9cbe04fa5145d2adc1ea4d
+      internalID: 1986624057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_39
+      rect:
+        serializedVersion: 2
+        x: 3847
+        y: 1093
+        width: 995
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75aa771661063fc48bbef349916e48a0
+      internalID: 946740724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_40
+      rect:
+        serializedVersion: 2
+        x: 4960
+        y: 728
+        width: 1219
+        height: 898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e80318ad4380a23479aa80a289e3c1fd
+      internalID: 1472900401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_41
+      rect:
+        serializedVersion: 2
+        x: 6297
+        y: 327
+        width: 1438
+        height: 1303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a251d3fded9d09f43bbfe81bd04d41ff
+      internalID: -1152086274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_42
+      rect:
+        serializedVersion: 2
+        x: 7883
+        y: 1041
+        width: 468
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47cb8b26f7d53104aa907d8b1b251b37
+      internalID: -412299200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_43
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 369
+        width: 1939
+        height: 493
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c718ed56056f35547890a8515e5b1595
+      internalID: 1423279754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_44
+      rect:
+        serializedVersion: 2
+        x: 2599
+        y: 385
+        width: 443
+        height: 463
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56863db5775ee50479ba409b0e6876ce
+      internalID: -1861136683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_45
+      rect:
+        serializedVersion: 2
+        x: 3203
+        y: 354
+        width: 501
+        height: 523
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 976a8403b4a6a8b4194b77ebb94800d4
+      internalID: -623621696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_46
+      rect:
+        serializedVersion: 2
+        x: 3847
+        y: 750
+        width: 995
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d5cf9c28832e4f41ad3a2932d875c4b
+      internalID: -1759822441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_47
+      rect:
+        serializedVersion: 2
+        x: 7883
+        y: 298
+        width: 468
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c71929d2bd44e634c8a4a3f23015e101
+      internalID: 222049016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_48
+      rect:
+        serializedVersion: 2
+        x: 3847
+        y: 406
+        width: 995
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 123a1a0688809c6488afe1bb37560f32
+      internalID: -246129498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_49
+      rect:
+        serializedVersion: 2
+        x: 5286
+        y: 370
+        width: 235
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9613584607b39f54ca3be87e78fa35fc
+      internalID: -1657308946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-ui-catroon_50
+      rect:
+        serializedVersion: 2
+        x: 5618
+        y: 370
+        width: 235
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94805679c9603ae4daa664ec25572dd0
+      internalID: -307838710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      game-ui-catroon_0: 1236616844
+      game-ui-catroon_1: 1764572163
+      game-ui-catroon_10: -916436482
+      game-ui-catroon_11: -1296720393
+      game-ui-catroon_12: -232395498
+      game-ui-catroon_13: 1581193958
+      game-ui-catroon_14: -2145578137
+      game-ui-catroon_15: -217631803
+      game-ui-catroon_16: 2022546497
+      game-ui-catroon_17: -1539278610
+      game-ui-catroon_18: -775604140
+      game-ui-catroon_19: 1284393489
+      game-ui-catroon_2: -540420821
+      game-ui-catroon_20: -627935593
+      game-ui-catroon_21: -661107536
+      game-ui-catroon_22: -835286769
+      game-ui-catroon_23: 537632471
+      game-ui-catroon_24: -127240061
+      game-ui-catroon_25: 1660139683
+      game-ui-catroon_26: -721068758
+      game-ui-catroon_27: 1929340618
+      game-ui-catroon_28: 1231464863
+      game-ui-catroon_29: 730847238
+      game-ui-catroon_3: 989299163
+      game-ui-catroon_30: -8466176
+      game-ui-catroon_31: 220084227
+      game-ui-catroon_32: -664461035
+      game-ui-catroon_33: 307772868
+      game-ui-catroon_34: 397810724
+      game-ui-catroon_35: -1874565716
+      game-ui-catroon_36: 134315757
+      game-ui-catroon_37: -1488318201
+      game-ui-catroon_38: 1986624057
+      game-ui-catroon_39: 946740724
+      game-ui-catroon_4: -412658553
+      game-ui-catroon_40: 1472900401
+      game-ui-catroon_41: -1152086274
+      game-ui-catroon_42: -412299200
+      game-ui-catroon_43: 1423279754
+      game-ui-catroon_44: -1861136683
+      game-ui-catroon_45: -623621696
+      game-ui-catroon_46: -1759822441
+      game-ui-catroon_47: 222049016
+      game-ui-catroon_48: -246129498
+      game-ui-catroon_49: -1657308946
+      game-ui-catroon_5: 765147375
+      game-ui-catroon_50: -307838710
+      game-ui-catroon_6: 136216060
+      game-ui-catroon_7: -1113351059
+      game-ui-catroon_8: -1221949110
+      game-ui-catroon_9: -237746432
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

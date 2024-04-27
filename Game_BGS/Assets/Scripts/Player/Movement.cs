@@ -11,7 +11,7 @@ namespace Player {
 
         private Rigidbody2D rb;
         private Vector2 movementDirection;
-        
+
         private void Awake() {
             rb = GetComponent<Rigidbody2D>();
         }

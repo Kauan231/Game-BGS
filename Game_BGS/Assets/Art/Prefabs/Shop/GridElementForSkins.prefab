@@ -370,6 +370,11 @@ MonoBehaviour:
   PriceText: {fileID: 6389261065225846656}
   ItemIcon: {fileID: 6389261065632950029}
   Action: {fileID: 4887999067181070532}
+  data:
+    item: {fileID: 0}
+    amount: 0
+    Equipped: 0
+  isShop: 0
 --- !u!114 &4887999067181070532
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,12 +20,7 @@ namespace Mechanics {
         public void SubtractAmount(InventoryItem _itemUpdated) {
             InventoryItem found = items.Find(x => x.item.Title == _itemUpdated.item.Title);
             int newAmount = found.amount - _itemUpdated.amount;
-            if(newAmount <= 0) {
-                RemoveItem(found);
-            }
-            else {
-                items.Single(x => x == found).amount = newAmount;
-            }
+            items.Single(x => x == found).amount = newAmount;
         }
 
         public void Collect(InventoryItem _item) {
@@ -35,6 +30,15 @@ namespace Mechanics {
             }
             else {
                 AddAmount(_item);
+            }
+        }
+
+        void Update() {
+            foreach(InventoryItem i in items) {
+                if(i.amount <= 0 ){
+                    items.Remove(i);
+                    break;
+                }
             }
         }
     }

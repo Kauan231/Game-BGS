@@ -13,22 +13,43 @@ public class PlayerInventory : MonoBehaviour
     public GameObject ItemsDisplayPrefab, ItemsDisplayPrefabSkin;
 
     [SerializeField] private Image ItemPreview;
-    [SerializeField] private TextMeshProUGUI ItemDescription, EquipBtnText;
+    [SerializeField] private TextMeshProUGUI ItemDescription, EquipBtnText, ItemTitle;
     [SerializeField] private Button EquipBtn;
     [SerializeField] private GameObject ShowMenu;
     [SerializeField] private Transform IconSpawn;
-    private InventoryItem ItemToEquip;
-    private GameObject selectedItemInUi;
+    
     private itemType SelectedType;
-
     [System.Serializable]
     public class InventoryType {
         public itemType type;
         public Button btnType;
         public Image Icon;
     }
-
     public List<InventoryType> typeSelectors = new List<InventoryType>();
+    List<GameObject> Spawned = new List<GameObject>();
+
+    private InventoryItem SelectedItem;
+
+    public void Select(InventoryItem it) {
+        SelectedItem = it;
+
+        if(it.Equipped) {
+            EquipBtnText.text = "Unequip";
+        }
+        else {
+            EquipBtnText.text = "Equip";
+        }
+
+        ItemDescription.text = it.item.Description;
+        ItemPreview.sprite =  it.item.Icon;
+        ItemTitle.text = it.item.Title;
+    }
+
+    void Equip() {
+        GameObject.FindWithTag("Player").GetComponent<EquipmentManager>().Equip(SelectedItem);
+        GameObject.FindWithTag("SoundManager").GetComponent<SoundManager>().ActivateSfx("Equip");
+        SelectedItem = null;
+    }
 
     private void ChangeType(itemType type) {
         foreach(InventoryType select in typeSelectors) {
@@ -40,62 +61,40 @@ public class PlayerInventory : MonoBehaviour
             }
         }
         SelectedType = type;
-        UpdateUI();
     }
 
-    private void OnSelection(InventoryItem it) {
-        if(it.Equipped) {
-            EquipBtnText.text = "Unequip"; 
-        }
-        else {
-            EquipBtnText.text = "Equip";
-        }   
-        ItemToEquip = it;
-        ItemDescription.text = it.item.Description;
-        ItemPreview.sprite =  it.item.Icon;
-        ShowMenu.SetActive(true);
-    }
-
-    private void BtnAction() {
-        GameObject.FindWithTag("Player").GetComponent<EquipmentManager>().Equip(ItemToEquip);
-        GameObject.FindWithTag("SoundManager").GetComponent<SoundManager>().ActivateSfx("Equip");
-        ItemToEquip.Equipped = !ItemToEquip.Equipped;
-        if(ItemToEquip.Equipped) {
-            EquipBtnText.text = "Unequip"; 
-        }
-        else {
-            EquipBtnText.text = "Equip";
-        }
-        UpdateUI();
-    }
-
-    private void Start() {
-        UpdateUI();
-        ChangeType(itemType.Gem);
-        EquipBtn.onClick.AddListener(BtnAction);
-    }
-
-    private void UpdateUI() {
-        GameObject[] UiItems = GameObject.FindGameObjectsWithTag("InventoryItem");
-
-        if(UiItems.Length > 0) {
-            for(int i=0; i < UiItems.Length; i++){
-                Destroy(UiItems[i]);
-            }
-        }
-
-        List<InventoryItem> toLoadInUI = GameObject.FindWithTag("Player").GetComponent<InventoryManager>().items; 
-
+    void Start() {
+        EquipBtn.onClick.AddListener(Equip);
         foreach(InventoryType selector in typeSelectors) {
             selector.btnType.onClick.AddListener(delegate {ChangeType(selector.type);} );
         }
+    }
+    
+    void ClearAll() {
+        SelectedItem = null;
+        Spawned = new List<GameObject>();
+        ChangeType(itemType.Gem);
+        ShowMenu.SetActive(false);
+    }
 
+    void StopAll() {
+        Time.timeScale = 0f;
+        GameObject.FindWithTag("Player").GetComponent<PlayerSound>().audio.Pause();
+    }
+
+    void StartAll() {
+        Time.timeScale = 1f;
+        GameObject.FindWithTag("Player").GetComponent<PlayerSound>().audio.Play();
+    }
+
+    void Spawn() {
+        List<InventoryItem> toLoadInUI = GameObject.FindWithTag("Player").GetComponent<InventoryManager>().items; 
         foreach(InventoryItem it in toLoadInUI) {
-            if(it.item.type != SelectedType) continue;
-
+            if(it == null) continue; 
+        
             GameObject toInstantiate;
 
-            if(SelectedType == itemType.Clothes) {
+            if(it.item.type == itemType.Clothes) {
                 toInstantiate = ItemsDisplayPrefabSkin;
             }
             else {
@@ -103,44 +102,56 @@ public class PlayerInventory : MonoBehaviour
             }
 
             GameObject created = Instantiate(toInstantiate);
-            created.SetActive(true);
+            if(it.item.type == SelectedType) {
+                created.SetActive(true);
+            };
             created.gameObject.tag = "InventoryItem";
             created.transform.parent = IconSpawn;
             created.transform.position = ItemsDisplayPrefab.transform.position;
             created.GetComponent<ItemDisplayInGrid>().AmountText.text = it.amount.ToString();
             created.GetComponent<ItemDisplayInGrid>().ItemIcon.sprite = it.item.Icon;
-            created.GetComponent<ItemDisplayInGrid>().Action.onClick.AddListener(delegate { OnSelection(it); });
-            EquipmentManager equipManager = GameObject.FindWithTag("Player").GetComponent<EquipmentManager>();
-            if(equipManager.EquippedItem != null && SelectedType != itemType.Clothes) {
-                if(equipManager.EquippedItem.item == null) continue;
-                if(it.item.Title == equipManager.EquippedItem.item.Title) {
-                    created.GetComponent<ItemDisplayInGrid>().ItemIcon.color = new Color32(17,17,17,255); 
-                    it.Equipped = true;
-                }
-            }  
-            if(equipManager.EquippedSkin != null && SelectedType == itemType.Clothes) {
-                if(equipManager.EquippedSkin.item == null) continue;
-                if(it.item.Title == equipManager.EquippedSkin.item.Title) {
-                    created.GetComponent<ItemDisplayInGrid>().ItemIcon.color = new Color32(17,17,17,255); 
-                    it.Equipped = true;
-                }
-            }          
+            created.GetComponent<ItemDisplayInGrid>().data = it;
+            Spawned.Add(created);
         }
     }
 
-    private void OnEnable(){
-        Time.timeScale = 0f;
-        GameObject.FindWithTag("Player").GetComponent<PlayerSound>().audio.Pause();
-        UpdateUI();
-        ChangeType(itemType.Gem);
-        ShowMenu.SetActive(false);
-        ItemToEquip = null;
-        ItemDescription.text = "";
-        ItemPreview.sprite = null;
+    void Show() {
+        foreach(GameObject gm in Spawned) {
+            if(gm) {
+                if(gm.GetComponent<ItemDisplayInGrid>().data.item.type != SelectedType) {
+                    gm.SetActive(false);
+                }
+                else {
+                    gm.SetActive(true);
+                }
+            } else {
+                Spawned.Remove(gm);
+                break;
+            }
+        }
+        
     }
-    private void OnDisable() {
-        Time.timeScale = 1f;
-        GameObject.FindWithTag("Player").GetComponent<PlayerSound>().audio.Play();
+
+    void OnEnable() {
+        ClearAll();
+        StopAll();
+        Spawn();
+        ShowMenu.SetActive(true);        
+    }
+    void OnDisable(){
+        foreach(GameObject item in Spawned) {
+            Destroy(item);
+        }
+        StartAll();
+    }
+
+    void Update() {
+        Show();
+        if(SelectedItem != null){
+            ShowMenu.SetActive(true);
+        } else {
+            ShowMenu.SetActive(false);
+        }
     }
 }
 

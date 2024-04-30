@@ -11,6 +11,8 @@ TagManager:
   - WalletManager
   - InventoryItem
   - SkinManager
+  - InventoryManager
+  - StoreManager
   layers:
   - Default
   - TransparentFX

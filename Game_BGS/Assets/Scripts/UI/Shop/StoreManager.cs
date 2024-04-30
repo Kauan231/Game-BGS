@@ -13,12 +13,12 @@ public class StoreManager : MonoBehaviour
     public GameObject ItemsDisplayPrefab, ItemsDisplayPrefabSkin;
 
     [SerializeField] private Image ProductPreview;
-    [SerializeField] private TextMeshProUGUI ProductDescription, Total, AmountText;
+    [SerializeField] private TextMeshProUGUI ProductDescription, Total, AmountText, ProductTitle;
     [SerializeField] private Button BuyOrSell, AddAmount, SubAmount;
     [SerializeField] private bool isBuy, isSell;
     [SerializeField] private GameObject ShowMenu;
     [SerializeField] private Transform IconSpawn;
-    private InventoryItem ItemToBuy;
+    private InventoryItem SelectedItem;
     private GameObject selectedItemInUi;
     private float TotalToPay;
     private int AmountToBuy;
@@ -32,11 +32,13 @@ public class StoreManager : MonoBehaviour
     }
 
     public List<InventoryType> typeSelectors = new List<InventoryType>();
+    List<GameObject> Spawned = new List<GameObject>();
+    List<InventoryItem> playerItems = new List<InventoryItem>();
 
     private void Add() {
         AmountToBuy++;
-        if(AmountToBuy > ItemToBuy.amount) {
-            AmountToBuy = ItemToBuy.amount;
+        if(AmountToBuy > SelectedItem.amount) {
+            AmountToBuy = SelectedItem.amount;
         }
     }
     private void Sub() {
@@ -56,67 +58,42 @@ public class StoreManager : MonoBehaviour
             }
         }
         SelectedType = type;
-        UpdateUI();
     }
 
-    private void OnSelection(InventoryItem it, GameObject _selectedItemInUi) {
-        ShowMenu.SetActive(true);
-        ItemToBuy = it;
-        selectedItemInUi = _selectedItemInUi;
+    public void Select(InventoryItem it) {
+        SelectedItem = it;
         ProductDescription.text = it.item.Description;
         ProductPreview.sprite =  it.item.Icon;
+        ProductTitle.text = it.item.Title;
     }
 
     private void BtnAction() {
         float playerCurrentMoney = GameObject.FindWithTag("WalletManager").GetComponent<WalletManager>().currentMoney;
-        if(ItemToBuy == null) return;
+        if(SelectedItem == null) return;
         if(isBuy) {
-            if(AmountToBuy > ItemToBuy.amount) return;
+            if(AmountToBuy > SelectedItem.amount) return;
+            InventoryItem found = playerItems.Find(x => x.item.Title == SelectedItem.item.Title);
+            if((found != null) && found.item.type == itemType.Clothes) return;
             if(TotalToPay <= playerCurrentMoney && TotalToPay != 0) {
                 GameObject.FindWithTag("WalletManager").GetComponent<WalletManager>().currentMoney -= TotalToPay;
                 GameObject.FindWithTag("SoundManager").GetComponent<SoundManager>().ActivateSfx("Buy");
-                GameObject.FindWithTag("Player").GetComponent<InventoryManager>().Collect(new InventoryItem(ItemToBuy.item, AmountToBuy));
+                GameObject.FindWithTag("Player").GetComponent<InventoryManager>().Collect(new InventoryItem(SelectedItem.item, AmountToBuy));
 
-                int newAmount = ItemToBuy.amount - AmountToBuy;
-                if(newAmount <= 0) {
-                    items.Remove(ItemToBuy);
-                    Destroy(selectedItemInUi);
-
-                    selectedItemInUi = null;
-                    ItemToBuy = null;
-                    AmountToBuy = 0;
-                    AmountText.text = "";
-                    TotalToPay = 0f;
-                    Total.text = "";
-                    ShowMenu.SetActive(false);
-                    return;
-                }
-                else {
-                    items.Single(x => x == ItemToBuy).amount = newAmount;
-                    selectedItemInUi.gameObject.GetComponent<ItemDisplayInGrid>().AmountText.text = newAmount.ToString();
-                    ItemToBuy.amount = newAmount;
-                    AmountToBuy = 0;
-                    AmountText.text = "";
-                    TotalToPay = 0f;
-                    Total.text = "";
-                }
-                
-                
+                int newAmount = SelectedItem.amount - AmountToBuy;
+                SelectedItem.amount = newAmount;
+                AmountToBuy = 0;
+                AmountText.text = "";
+                TotalToPay = 0f;
+                Total.text = "";
             }
         }
         if(isSell) {
-            if(AmountToBuy > ItemToBuy.amount || AmountToBuy == 0) return;
+            if(AmountToBuy > SelectedItem.amount || AmountToBuy == 0) return;
+            if(SelectedItem.Equipped) return;
             GameObject.FindWithTag("SoundManager").GetComponent<SoundManager>().ActivateSfx("Buy");
             GameObject.FindWithTag("WalletManager").GetComponent<WalletManager>().currentMoney += TotalToPay;
-            int newAmount =  ItemToBuy.amount - AmountToBuy;
-            if(newAmount <= 0) {
-                Destroy(selectedItemInUi);
-            }
-            else {
-                selectedItemInUi.gameObject.GetComponent<ItemDisplayInGrid>().AmountText.text = newAmount.ToString();
-            }
-
-            ItemToBuy.amount = newAmount;
+            int newAmount =  SelectedItem.amount - AmountToBuy;
+            SelectedItem.amount = newAmount;
             AmountToBuy = 0;
             AmountText.text = AmountToBuy.ToString();
             TotalToPay = 0f;
@@ -125,42 +102,32 @@ public class StoreManager : MonoBehaviour
     }
 
     private void Start() {
-        UpdateUI();
         ChangeType(itemType.Gem);
+        foreach(InventoryType selector in typeSelectors) {
+            selector.btnType.onClick.AddListener(delegate {ChangeType(selector.type);} );
+        }
         AddAmount.onClick.AddListener(Add);
         SubAmount.onClick.AddListener(Sub);
         BuyOrSell.onClick.AddListener(BtnAction);
     }
-
-    private void UpdateUI() {
-        GameObject[] UiItems = GameObject.FindGameObjectsWithTag("InventoryItem");
-
-        if(UiItems.Length > 0) {
-            for(int i=0; i < UiItems.Length; i++){
-                Destroy(UiItems[i]);
-            }
-        }
-
+    
+    void Spawn() {
         List<InventoryItem> toLoadInUI = new List<InventoryItem>();
+        playerItems = GameObject.FindWithTag("Player").GetComponent<InventoryManager>().items;  
 
         if(isSell) {
-            toLoadInUI = GameObject.FindWithTag("Player").GetComponent<InventoryManager>().items;  
+            toLoadInUI = playerItems;  
         }
         if(isBuy) {
             toLoadInUI = items;
         }
 
-        foreach(InventoryType selector in typeSelectors) {
-            selector.btnType.onClick.AddListener(delegate {ChangeType(selector.type);} );
-        }
-
         foreach(InventoryItem it in toLoadInUI) {
-            if(it.item.type != SelectedType) continue;
-            if(it.Equipped) continue;
-            
+            if(it == null) continue; 
+        
             GameObject toInstantiate;
 
-            if(SelectedType == itemType.Clothes) {
+            if(it.item.type == itemType.Clothes) {
                 toInstantiate = ItemsDisplayPrefabSkin;
             }
             else {
@@ -168,39 +135,81 @@ public class StoreManager : MonoBehaviour
             }
 
             GameObject created = Instantiate(toInstantiate);
-            created.SetActive(true);
+            if(it.item.type == SelectedType) {
+                created.SetActive(true);
+            };
             created.gameObject.tag = "InventoryItem";
             created.transform.parent = IconSpawn;
             created.transform.position = ItemsDisplayPrefab.transform.position;
             created.GetComponent<ItemDisplayInGrid>().AmountText.text = it.amount.ToString();
-            created.GetComponent<ItemDisplayInGrid>().PriceText.text = it.item.Price.ToString();
             created.GetComponent<ItemDisplayInGrid>().ItemIcon.sprite = it.item.Icon;
-            created.GetComponent<ItemDisplayInGrid>().Action.onClick.AddListener(delegate { OnSelection(it, created); });
+            created.GetComponent<ItemDisplayInGrid>().data = it;
+            created.GetComponent<ItemDisplayInGrid>().isShop = true;
+            Spawned.Add(created);
         }
+    }
+
+    void ClearAll() {
+        SelectedItem = null;
+        selectedItemInUi = null;
+        ProductDescription.text = "";
+        ProductTitle.text = "";
+        ProductPreview.sprite = null;
+        Spawned = new List<GameObject>();
+        playerItems = new List<InventoryItem>();
+        ChangeType(itemType.Gem);
+        ShowMenu.SetActive(false);
+    }
+
+    void StopAll() {
+        GameObject.FindWithTag("Player").GetComponent<PlayerSound>().audio.Pause();
+        Time.timeScale = 0f;
         
     }
 
-    private void OnEnable(){
-        Time.timeScale = 0f;
-        GameObject.FindWithTag("Player").GetComponent<PlayerSound>().audio.Pause();
-        UpdateUI();
-        ChangeType(itemType.Gem);
-        ShowMenu.SetActive(false);
-        ItemToBuy = null;
-        selectedItemInUi = null;
-        ProductDescription.text = "";
-        ProductPreview.sprite = null;
-    }
-    private void OnDisable() {
+    void StartAll() {
         Time.timeScale = 1f;
-        GameObject.FindWithTag("Player").GetComponent<PlayerSound>().audio.Play();
+        GameObject.FindWithTag("Player").GetComponent<PlayerSound>().audio.Play();   
+    }
+
+    void Show() {
+        foreach(GameObject gm in Spawned) {
+            if(gm) {
+                if((gm.GetComponent<ItemDisplayInGrid>().data.item.type != SelectedType) || gm.GetComponent<ItemDisplayInGrid>().data.Equipped ) {
+                    gm.SetActive(false);
+                }
+                else {
+                    gm.SetActive(true);
+                }
+            } else {
+                Spawned.Remove(gm);
+                break;
+            }
+        }
+    }
+
+    void OnEnable() {
+        ClearAll();
+        StopAll();
+        Spawn();
+        ShowMenu.SetActive(false);        
+    }
+    void OnDisable(){
+        foreach(GameObject item in Spawned) {
+            Destroy(item);
+        }
+        StartAll();
     }
 
     private void Update() {
-        if(ItemToBuy != null) {
+        Show();
+        if(SelectedItem != null) {
+            ShowMenu.SetActive(true);  
             AmountText.text = AmountToBuy.ToString();
-            TotalToPay = ItemToBuy.item.Price*AmountToBuy;
+            TotalToPay = SelectedItem.item.Price*AmountToBuy;
             Total.text = TotalToPay.ToString();
+        } else {
+            ShowMenu.SetActive(false);
         }
     }
 }

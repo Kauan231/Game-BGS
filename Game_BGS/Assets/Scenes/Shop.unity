@@ -6023,7 +6023,7 @@ GameObject:
   - component: {fileID: 1040381220}
   m_Layer: 0
   m_Name: StoreManager
-  m_TagString: Untagged
+  m_TagString: StoreManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6065,6 +6065,7 @@ MonoBehaviour:
   ProductDescription: {fileID: 536507978}
   Total: {fileID: 341163851}
   AmountText: {fileID: 1807949696}
+  ProductTitle: {fileID: 1966908904}
   BuyOrSell: {fileID: 375500585}
   AddAmount: {fileID: 525246059}
   SubAmount: {fileID: 1248218812}
@@ -12769,7 +12770,7 @@ GameObject:
   - component: {fileID: 1715962568}
   m_Layer: 0
   m_Name: StoreManager
-  m_TagString: Untagged
+  m_TagString: StoreManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12817,6 +12818,7 @@ MonoBehaviour:
   ProductDescription: {fileID: 199984950}
   Total: {fileID: 699987104}
   AmountText: {fileID: 857502980}
+  ProductTitle: {fileID: 239663883}
   BuyOrSell: {fileID: 1019550637}
   AddAmount: {fileID: 1601768998}
   SubAmount: {fileID: 580507620}
